@@ -1,0 +1,35 @@
+defaults:
+  - dataset: isp
+  - optional pathology_preset: null
+  - _self_
+
+dataset:
+  root_dir: ${hydra:runtime.cwd}/../isp_dataset
+  signal_root: ${dataset.root_dir}/data
+  map_file: ${dataset.root_dir}/map_file.csv
+  backend: wfdb
+  label_column: scp_codes
+
+target:
+  pathology_names: []
+  annotation_sources:
+    - unified_decision
+    - doctor1
+    - doctor2
+    - doctor3
+    - doctor4
+    - doctor5
+    - doctor6
+    - doctor7
+
+predict:
+  checkpoint_path: ${hydra:runtime.cwd}/classification_outputs/best_model.pt
+  batch_size: 64
+  num_workers: 4
+  pin_memory: false
+  persistent_workers: false
+  prefetch_factor: 2
+  device: cpu
+
+output:
+  dir: ${hydra:run.dir}

@@ -1,0 +1,16 @@
+defaults:
+  - dataset: ptbxl
+  - optional pathology_preset: null
+  - _self_
+
+predict:
+  checkpoint_path: ${hydra:runtime.cwd}/classification_outputs/best_model.pt
+  batch_size: 64
+  num_workers: 4
+  pin_memory: false
+  persistent_workers: false
+  prefetch_factor: 2
+  device: cpu
+
+output:
+  dir: ${hydra:run.dir}

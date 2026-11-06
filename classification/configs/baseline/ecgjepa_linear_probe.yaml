@@ -1,0 +1,23 @@
+# @package _global_
+
+defaults:
+  - override /model: ecgjepa
+
+model:
+  pretrained_checkpoint_path: classification_data/ecg_jepa.pt
+
+ecg:
+  leads: [0, 1, 6, 7, 8, 9, 10, 11]
+  resampled_frequency: 250
+  observed_length_seconds: 10.0
+  normalization: z_norm
+  crop_mode: first
+  filter:
+    name: ecgjepa_bandpass
+    params: {}
+
+training:
+  trainable_scope: head_only
+
+inference:
+  strategy: single_crop

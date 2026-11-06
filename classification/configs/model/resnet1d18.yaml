@@ -1,0 +1,16 @@
+name: resnet1d18
+params:
+  base_filters: 64
+  kernel_size: 3
+  stride: 2
+  dropout_prob: 0.0
+  fix_feature_dim: false
+  kernel_size_stem: null
+  stride_stem: 2
+  pooling_stem: true
+  concat_pooling: true
+  hidden_layers_head: null
+  dropout_prob_head: 0.5
+  act_head: relu
+  bn_head: true
+  bn_final_head: false

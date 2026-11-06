@@ -1,0 +1,36 @@
+model_params:
+    model_name: ""
+    init_args:
+
+dataset: isp
+test_dataset: isp
+train_csv_path: ""
+test_csv_path: ""
+train_data_base_path: ""
+test_data_base_path: ""
+save_dir: ${hydra:run.dir}
+
+ecg_record_params:
+    resampled_frequency: 1000
+    observed_ecg_length: 10
+
+training_params:
+    epochs: 50
+    batch_size: 16
+    num_workers: 4
+    loss_class: ""
+    loss_args: {}
+    lr: 0.003
+    early_stopping_patience: 8
+    scheduler_patience: 3
+    device: "cuda"
+    factor: 0.4
+    window_tolerance: 150
+
+eval_params:
+    gap_to_fill_dist: 300
+    interval_len_to_remove: 50
+    df_save_path: ""
+
+predict:
+    checkpoint_path: ""

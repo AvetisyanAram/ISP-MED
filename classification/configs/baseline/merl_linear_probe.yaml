@@ -1,0 +1,19 @@
+# @package _global_
+
+defaults:
+  - override /model: merl
+
+model:
+  pretrained_checkpoint_path: null
+
+ecg:
+  leads: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  resampled_frequency: 500
+  observed_length_seconds: 10.0
+  normalization: merl_minmax
+  normalization_params:
+    eps: 1e-8
+  lead_swap: avl_avf
+
+training:
+  trainable_scope: head_only

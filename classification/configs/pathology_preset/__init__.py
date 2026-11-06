@@ -1,0 +1,1 @@
+"""Pathology preset config group."""

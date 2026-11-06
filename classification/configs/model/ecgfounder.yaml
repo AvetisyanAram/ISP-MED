@@ -1,0 +1,12 @@
+name: ecgfounder
+pretrained_checkpoint_path: null
+params:
+  base_filters: 64
+  ratio: 1
+  filter_list: [64, 160, 160, 400, 400, 1024, 1024]
+  m_blocks_list: [2, 2, 2, 3, 3, 4, 4]
+  kernel_size: 16
+  stride: 2
+  groups_width: 16
+  use_bn: false
+  use_do: false

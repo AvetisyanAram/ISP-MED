@@ -1,0 +1,9 @@
+data:
+  root_dir: ${oc.env:CLASSIFICATION_DATA_ROOT,${hydra:runtime.cwd}/classification_data}
+
+prepare:
+  download: true
+  raw_zip_path: null
+  zip_url: null
+  ptbxl_version: 1.0.3
+  source_frequency: 500

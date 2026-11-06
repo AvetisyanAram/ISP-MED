@@ -1,0 +1,18 @@
+# @package _global_
+
+defaults:
+  - override /model: s4
+
+ecg:
+  leads: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  resampled_frequency: 100
+  observed_length_seconds: 2.5
+  normalization: z_norm
+
+inference:
+  strategy: sliding_window
+  full_signal_length_seconds: 10.0
+  enabled_on_validation: true
+  enabled_on_prediction: true
+  num_windows: 4
+  aggregation: mean

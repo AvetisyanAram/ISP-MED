@@ -1,0 +1,11 @@
+name: ecgjepa
+pretrained_checkpoint_path: null
+params:
+  signal_length: 2500
+  patch_size: 50
+  dim: 768
+  depth: 12
+  num_heads: 16
+  mlp_ratio: 4.0
+  qkv_bias: false
+  pooling: mean

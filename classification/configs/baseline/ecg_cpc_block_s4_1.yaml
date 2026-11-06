@@ -1,0 +1,25 @@
+# @package _global_
+
+defaults:
+  - override /model: ecg_cpc
+
+model:
+  pretrained_checkpoint_path: null
+
+ecg:
+  leads: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  resampled_frequency: 240
+  observed_length_seconds: 2.5
+  normalization: z_norm
+
+training:
+  trainable_scope: group_list
+  trainable_groups: [head, predictor_norm3, s4_layer3]
+
+inference:
+  strategy: sliding_window
+  full_signal_length_seconds: 10.0
+  enabled_on_validation: true
+  enabled_on_prediction: true
+  num_windows: 4
+  aggregation: mean

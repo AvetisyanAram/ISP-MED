@@ -1,0 +1,16 @@
+name: ecg_cpc
+params:
+  signal_length: 600
+  encoder_features: [512, 512, 512, 512]
+  encoder_kernel_sizes: [3, 1, 1, 1]
+  encoder_strides: [2, 1, 1, 1]
+  predictor_state_dim: 8
+  predictor_model_dim: 512
+  predictor_layers: 4
+  predictor_dropout: 0.2
+  predictor_tie_dropout: false
+  predictor_prenorm: false
+  predictor_batchnorm: false
+  predictor_causal: true
+  predictor_backbone: s42
+pretrained_checkpoint_path: null

@@ -1,0 +1,13 @@
+name: stmem
+pretrained_checkpoint_path: null
+params:
+  seq_len: 2250
+  patch_size: 75
+  width: 768
+  depth: 12
+  mlp_dim: 3072
+  heads: 12
+  dim_head: 64
+  qkv_bias: true
+  drop_out_rate: 0.0
+  attn_drop_out_rate: 0.0

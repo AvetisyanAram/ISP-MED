@@ -1,0 +1,28 @@
+# @package _global_
+
+defaults:
+  - override /model: ecgfounder
+
+model:
+  pretrained_checkpoint_path: null
+
+ecg:
+  leads: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  resampled_frequency: 500
+  observed_length_seconds: 2.5
+  normalization: z_norm
+  filter:
+    name: ecgfounder_bandpass
+    params: {}
+
+training:
+  trainable_scope: head_only
+
+inference:
+  strategy: sliding_window
+  full_signal_length_seconds: 10.0
+  enabled_on_validation: true
+  enabled_on_prediction: true
+  num_windows: 5
+  # Supported options: mean, max
+  aggregation: mean
